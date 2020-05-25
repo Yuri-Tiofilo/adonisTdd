@@ -120,3 +120,29 @@ Harminder Virk (Aman) - [https://github.com/thetutlage](https://github.com/thetu
 
 [coveralls-url]: https://coveralls.io/github/adonisjs/adonis-vow
 
+## How to generate documentation of these tests(coverage)?
+
+1. install module nyc <br>
+ yarn add nyc
+ or
+ npm i nyc
+2º - replace package.json <br>
+
+"scripts": { "start": "node server.js", "test": "nyc node ace test" },
+
+3º - create file in base file project .nycrc
+
+{
+  "all": true,
+  "include": ["app/**"],
+  "reporter": "html",
+  "report-dir": "test/coverage"
+}
+
+4º - run comand
+npm test
+work's for me, Thx.
+
+https://stackoverflow.com/questions/61975885/generate-html-coverage-report-in-adonis/61991537#61991537
+
+https://forum.adonisjs.com/t/output-coverage-report-from-tests/927/9
